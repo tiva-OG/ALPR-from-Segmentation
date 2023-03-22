@@ -1,0 +1,100 @@
+#!/bin/bash
+echo "Hello World!"
+
+# A simple variable example
+greeting=Hello
+name=Tux
+echo $greeting $name
+
+var=$((3+9))
+echo $var
+
+echo "scale=4;22/7" | bc
+
+#### READING USER INPUT ####
+
+# echo "Enter a number: "
+# read a
+
+# read -p "Enter a number: " b
+
+# var=$((a+b))
+# echo $var
+
+#### NUMERIC COMPARISON (Logical Operators) ####
+
+read -p "Please enter a number: " x
+read -p "Please enter a number: " y
+
+if [ $x -gt $y ]
+then
+echo X is greater than Y
+
+elif [ $x -lt $y ]
+then
+echo X is less than Y
+
+elif [ $x -eq $y ]
+then
+echo X is equal to Y
+
+fi
+
+#### CONDITIONAL STATEMENTS (Decision Making) ####
+
+read -p "Please enter 'a': " a
+read -p "Please enter 'b': " b
+read -p "Please enter 'c': " c
+
+if [ $a == $b -a $b == $c -a $c == $a ]
+then
+echo EQUILATERAL
+
+elif [ $a == $b -o $b == $c -o $c == $a ]; then
+echo ISOSCELES
+
+else
+echo SCALENE
+
+fi
+
+#### LOOPING & SKIPPING ####
+
+# > Looping with numbers
+for i in {1..5}; do
+echo $i
+done
+
+# > Looping with strings
+for x in cyan magenta yellow; do
+echo $x
+done
+
+# > While Loop
+i=1
+while [[ $i -le 10 ]]; do
+    echo "$i"
+    (( i += 1 ))
+done
+
+#### READING FILES ####
+
+LINE=1
+
+while read -r CURRENT_LINE; do
+    echo "$LINE: $CURRENT_LINE"
+    (( LINE ++ ))
+done < "sample.txt"
+
+#### EXECUTE COMMANDS WITH BACK TICKS ####
+
+var=`df -h | grep tmpfs`
+echo "$var"
+
+#### GET ARGUMENTS FROM CMD ####
+
+for x in $@; do
+    echo "Entered arg is $x"
+done
+
+#### AUTOMATE SCRIPT BY SCHEDULING VIA CRON JOBS
