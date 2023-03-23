@@ -78,4 +78,4 @@ for fine-tuning, use the `--weights` argument to specify the path to pre-trained
 * [ALPR in Unconstrained Scenarios](https://github.com/sergiomsilva/alpr-unconstrained)
 * [U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/pdf/1505.04597)
 * [Darknet: Open Source Neural Networks in C](https://pjreddie.com/darknet/)
-# ALPR-from-Segmentation
+### ALPR-from-Segmentation
